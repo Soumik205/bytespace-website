@@ -9,6 +9,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: siteUrl, lastModified, changeFrequency: "monthly", priority: 1 },
     {
+      url: `${siteUrl}/courses`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: `${siteUrl}/login`,
       lastModified,
       changeFrequency: "yearly",
