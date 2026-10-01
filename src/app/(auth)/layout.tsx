@@ -5,7 +5,7 @@ import { Container } from "@/components/ui/Container";
 
 export default function AuthLayout({ children }: LayoutProps<"/">) {
   return (
-    <div className="min-h-dvh bg-grid">
+    <div className="min-h-dvh bg-grid [--focus-ring:var(--color-lime)]">
       <Container className="pb-16 xl:pb-[120px]">
         <header className="flex h-20 items-center xl:block xl:h-auto xl:pt-[35px]">
           <Link
