@@ -96,6 +96,7 @@ export type Course = {
   rating: string;
   price: string;
   learners: string;
+  href?: string;
 };
 
 const courseDefaults = {
@@ -118,6 +119,7 @@ export const courses: Course[] = [
   {
     ...courseDefaults,
     title: "Build Digital Asset",
+    href: "/courses/build-digital-asset",
     image: "/images/courses/digital-asset.webp",
   },
   {
