@@ -2,8 +2,8 @@
 
 Landing page for ByteSpace, an online course platform, built from the Figma design with Next.js, TypeScript and Tailwind CSS.
 
-- Live site: _added after the first production deploy_
-- Pull request: _added once the PR is open_
+- Live site: https://bytespace-website-navy.vercel.app
+- Pull request: https://github.com/Soumik205/bytespace-website/pull/1
 
 ![ByteSpace landing page](public/og.png)
 
