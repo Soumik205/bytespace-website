@@ -25,7 +25,7 @@ export function TestimonialsSection() {
           </p>
         </div>
 
-        <ul className="mt-12 grid items-start gap-6 md:grid-cols-2 lg:mt-[72px] lg:grid-cols-3 lg:gap-[41px]">
+        <ul className="mt-12 grid grid-cols-1 items-start gap-6 md:grid-cols-2 lg:mt-[72px] lg:grid-cols-3 lg:gap-[41px]">
           {testimonials.map((testimonial) => (
             <li key={testimonial.name}>
               <figure className="rounded-card bg-white p-6">
