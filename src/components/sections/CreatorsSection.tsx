@@ -14,15 +14,15 @@ export function CreatorsSection() {
       aria-labelledby="creators-title"
       className="pt-16 pb-20 lg:pt-[72px] lg:pb-[120px]"
     >
-      <Container className="flex flex-col-reverse gap-12 lg:flex-row lg:items-center lg:justify-between">
+      <Container className="flex flex-col-reverse gap-12 lg:flex-row lg:items-start lg:justify-between">
         <Artboard
           width={541}
           height={596}
           aria-hidden
-          className="[--scale:0.6] sm:[--scale:0.9] lg:w-[541px] lg:shrink-0 lg:[--scale:1]"
+          className="[--scale:0.6] sm:[--scale:0.9] lg:ml-px lg:w-[541px] lg:shrink-0 lg:[--scale:1]"
         >
           <div className="absolute top-[44px] left-0 w-[232px] rounded-2xl bg-primary p-4 text-surface">
-            <p className="text-base leading-[1.2]">Total Revenue</p>
+            <p className="text-base leading-[1.2] font-medium">Total Revenue</p>
             <p className="text-2xs leading-[1.2]">July 1-28</p>
             <div className="mt-2.5 flex items-center justify-between">
               <p className="font-display text-amount">$120.29</p>
@@ -35,7 +35,7 @@ export function CreatorsSection() {
             </div>
           </div>
           <div className="absolute top-[194px] left-0 w-[134px] rounded-2xl bg-primary p-4 text-surface">
-            <p className="text-base leading-[1.2]">Year to Date</p>
+            <p className="text-base leading-[1.2] font-medium">Year to Date</p>
             <p className="text-2xs leading-[1.2]">2023</p>
             <p className="mt-2.5 font-display text-amount whitespace-nowrap">
               $1,200.38
@@ -52,7 +52,10 @@ export function CreatorsSection() {
             sizes="580px"
             className="absolute top-[-3px] left-[7px] max-w-none"
           />
-          <HappyStudentsCard className="absolute top-[413px] left-[283px]" />
+          <HappyStudentsCard
+            variant="creators"
+            className="absolute top-[413px] left-[283px]"
+          />
           <Shape
             src="/images/shapes/coil-lime.webp"
             size={216}
@@ -61,7 +64,7 @@ export function CreatorsSection() {
           />
         </Artboard>
 
-        <div className="lg:w-[579px]">
+        <div className="lg:w-[579px] lg:pt-[104px]">
           <h2
             id="creators-title"
             className="max-w-[400px] font-display text-[32px]/[1.2] font-semibold tracking-[-0.01em] text-ink lg:text-h2"
@@ -73,11 +76,11 @@ export function CreatorsSection() {
             individuals or entities in the creation, publication, and
             administration of educational courses.
           </p>
-          <ul className="mt-8 flex flex-col gap-[11px] lg:mt-10">
+          <ul className="mt-8 flex flex-col gap-[11px] lg:mt-[38px]">
             {creatorBenefits.map((benefit) => (
               <li
                 key={benefit}
-                className="flex items-center gap-2 text-lg text-ink"
+                className="flex items-center gap-2 text-lg font-medium text-ink"
               >
                 <CheckCircleIcon className="size-6 shrink-0 text-primary" />
                 {benefit}
