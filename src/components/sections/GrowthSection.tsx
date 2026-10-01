@@ -25,11 +25,12 @@ export function GrowthSection() {
             embark on a new career path entirely, we have the resources you
             need.
           </p>
-          <dl className="mt-8 flex gap-14 lg:mt-10">
+          {/* Column starts are taken from the design, where they ignore the width of the values. */}
+          <dl className="mt-8 flex gap-14 lg:mt-10 lg:grid lg:grid-cols-[125px_121px_auto] lg:gap-0">
             {stats.map((stat) => (
               <div key={stat.label} className="flex flex-col-reverse">
                 <dt className="text-lg text-ink-soft">{stat.label}</dt>
-                <dd className="font-display text-[36px]/[1.2] font-medium tracking-[-0.01em] text-primary">
+                <dd className="font-display text-[36px]/[44px] font-medium tracking-[-0.01em] text-primary">
                   {stat.value}
                 </dd>
               </div>
