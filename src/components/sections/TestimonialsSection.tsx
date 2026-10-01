@@ -1,12 +1,13 @@
 import Image from "next/image";
 
 import { testimonials } from "@/content/landing";
+import { cn } from "@/lib/utils";
 
 export function TestimonialsSection() {
   return (
     <section
       aria-labelledby="testimonials-title"
-      className="bg-glow-testimonials py-20 lg:pt-[74px] lg:pb-[60px]"
+      className="bg-glow-testimonials py-20 lg:pt-[74px] lg:pb-[57px]"
     >
       <div className="mx-auto w-full max-w-[1204px] px-4 sm:px-6 xl:px-0">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
@@ -26,7 +27,7 @@ export function TestimonialsSection() {
         </div>
 
         <ul className="mt-12 grid grid-cols-1 items-start gap-6 md:grid-cols-2 lg:mt-[72px] lg:grid-cols-3 lg:gap-[41px]">
-          {testimonials.map((testimonial) => (
+          {testimonials.map((testimonial, index) => (
             <li key={testimonial.name}>
               <figure className="rounded-card bg-white p-6">
                 <Image
@@ -36,11 +37,19 @@ export function TestimonialsSection() {
                   height={80}
                   className="size-20 rounded-full object-cover"
                 />
-                <figcaption className="mt-6">
+                {/* The second and third cards space the name and role slightly looser in the design. */}
+                <figcaption className={index === 0 ? "mt-6" : "mt-[26px]"}>
                   <p className="font-display text-title text-black">
                     {testimonial.name}
                   </p>
-                  <p className="text-lg text-primary">{testimonial.role}</p>
+                  <p
+                    className={cn(
+                      "text-lg text-primary",
+                      index > 0 && "mt-0.5",
+                    )}
+                  >
+                    {testimonial.role}
+                  </p>
                 </figcaption>
                 <blockquote className="mt-6 text-lg text-body">
                   {testimonial.quote}
