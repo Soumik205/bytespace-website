@@ -92,7 +92,6 @@ export function CourseSidebar({ course, className }: CourseSidebarProps) {
       </p>
       <Link
         href={course.creator.href}
-        prefetch={false}
         className="mt-6 inline-flex h-[35px] items-center rounded-full border border-line px-4 text-base font-medium text-ink-soft transition-colors hover:border-primary hover:text-primary"
       >
         See Full Profile

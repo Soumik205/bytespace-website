@@ -27,7 +27,6 @@ export function CourseHeader({ course }: { course: CourseDetail }) {
           by{" "}
           <Link
             href={course.creator.href}
-            prefetch={false}
             className="text-lime hover:underline"
           >
             {course.creator.handle}
