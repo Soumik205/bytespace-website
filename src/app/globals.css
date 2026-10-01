@@ -102,6 +102,18 @@
   background-position: calc(50% - 660px) 118px;
 }
 
+/* Lime that fades out toward the bottom, used for the large 404 numerals. */
+@utility bg-fade-lime {
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-lime),
+    rgb(212 251 32 / 0.96) 25%,
+    rgb(212 251 32 / 0.81) 50.5%,
+    rgb(212 251 32 / 0.61) 68%,
+    rgb(255 255 255 / 0)
+  );
+}
+
 @utility bg-glow-features {
   background-color: var(--color-canvas);
   background-image:

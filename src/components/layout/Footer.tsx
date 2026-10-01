@@ -8,9 +8,9 @@ import { cn } from "@/lib/utils";
 
 const linkClasses = "text-ink transition-colors hover:text-primary";
 
-export function Footer() {
+export function Footer({ className }: { className?: string }) {
   return (
-    <footer className="border-t border-line">
+    <footer className={cn("border-t border-line", className)}>
       <Container className="pt-16 pb-12 lg:pt-[70px]">
         <div className="flex flex-col gap-12 lg:flex-row lg:justify-between">
           <div className="lg:w-[504px]">
