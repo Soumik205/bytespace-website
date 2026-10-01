@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRef } from "react";
 
 import { BagIcon, CloseIcon, MenuIcon } from "@/components/icons/Icons";
+import { Button } from "@/components/ui/Button";
 import { Logo } from "@/components/ui/Logo";
 import { authNav, mainNav } from "@/content/landing";
 
@@ -62,17 +63,13 @@ export function MobileMenu() {
           <ul className="flex flex-wrap items-center gap-3 border-t border-surface/20 pt-8">
             {authNav.map((link, index) => (
               <li key={link.label}>
-                <Link
+                <Button
                   href={link.href}
                   onClick={close}
-                  className={
-                    index === authNav.length - 1
-                      ? "inline-flex h-[46px] items-center rounded-full bg-lime px-6 text-lg text-ink"
-                      : "inline-flex h-[46px] items-center rounded-full border border-surface/40 px-6 text-lg"
-                  }
+                  variant={index === authNav.length - 1 ? "primary" : "outline"}
                 >
                   {link.label}
-                </Link>
+                </Button>
               </li>
             ))}
             <li className="ml-auto">
