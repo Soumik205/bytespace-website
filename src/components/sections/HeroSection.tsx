@@ -6,6 +6,7 @@ import { SearchForm } from "@/components/forms/SearchForm";
 import { Artboard } from "@/components/ui/Artboard";
 import { Container } from "@/components/ui/Container";
 import { Shape, type ShapeProps } from "@/components/ui/Shape";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const shapes: ShapeProps[] = [
   {
@@ -51,12 +52,14 @@ export function HeroSection() {
     >
       <div className="relative mx-auto max-w-[1440px] pt-[136px] lg:pt-[169px]">
         <Container className="relative z-10 text-center">
-          <h1
+          <SectionHeading
+            as="h1"
+            size="display"
             id="hero-title"
-            className="mx-auto max-w-[880px] font-display text-[40px]/[1.2] font-semibold tracking-[-0.01em] text-white sm:text-[56px]/[1.2] lg:text-display"
+            className="mx-auto max-w-[880px] text-white"
           >
             Get Access to Hundreds Courses Available
-          </h1>
+          </SectionHeading>
           <p className="mt-6 text-lg text-mist lg:mt-8">
             Unlock your creativity, gain valuable knowledge, and grow your
             business with our wide range of courses.

@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import { testimonials } from "@/content/landing";
 import { cn } from "@/lib/utils";
 
@@ -11,12 +12,12 @@ export function TestimonialsSection() {
     >
       <div className="mx-auto w-full max-w-[1204px] px-4 sm:px-6 xl:px-0">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-          <h2
+          <SectionHeading
             id="testimonials-title"
-            className="max-w-[480px] font-display text-[32px]/[1.2] font-semibold tracking-[-0.01em] text-black lg:text-h2"
+            className="max-w-[480px] text-black"
           >
             Discover What Our Community Is Saying
-          </h2>
+          </SectionHeading>
           <p className="text-lg text-body lg:w-[584px]">
             At ByteSpace, our vibrant community of learners and creators is at
             the heart of what we do. Hear directly from those who have

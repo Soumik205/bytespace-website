@@ -1,6 +1,7 @@
 import { CourseCard } from "@/components/cards/CourseCard";
 import { TopicFilter } from "@/components/sections/TopicFilter";
 import { Container } from "@/components/ui/Container";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import { courses } from "@/content/landing";
 
 export function CoursesSection() {
@@ -12,12 +13,12 @@ export function CoursesSection() {
     >
       <Container>
         <div className="text-center">
-          <h2
+          <SectionHeading
             id="courses-title"
-            className="mx-auto max-w-[520px] font-display text-[32px]/[1.2] font-semibold tracking-[-0.01em] text-ink-strong lg:text-h2"
+            className="mx-auto max-w-[520px] text-ink-strong"
           >
             Discover Your Passion, Build Your Skills
-          </h2>
+          </SectionHeading>
           <p className="mx-auto mt-4 max-w-[925px] text-lg text-muted">
             At Bytespace Courses, we bring you closer to life-changing
             knowledge. Explore a variety of courses across different fields,

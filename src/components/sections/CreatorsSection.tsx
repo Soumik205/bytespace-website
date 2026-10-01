@@ -6,6 +6,7 @@ import { CheckCircleIcon } from "@/components/icons/Icons";
 import { Artboard } from "@/components/ui/Artboard";
 import { Container } from "@/components/ui/Container";
 import { Shape } from "@/components/ui/Shape";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import { creatorBenefits } from "@/content/landing";
 
 export function CreatorsSection() {
@@ -58,12 +59,12 @@ export function CreatorsSection() {
         </Artboard>
 
         <div className="lg:w-[579px] lg:pt-[104px]">
-          <h2
+          <SectionHeading
             id="creators-title"
-            className="max-w-[400px] font-display text-[32px]/[1.2] font-semibold tracking-[-0.01em] text-ink lg:text-h2"
+            className="max-w-[400px] text-ink"
           >
             Create &amp; Manage Courses Easily.
-          </h2>
+          </SectionHeading>
           <p className="mt-6 text-lg text-ink-soft lg:mt-10">
             <strong className="font-bold text-ink">ByteSpace</strong> supports
             individuals or entities in the creation, publication, and

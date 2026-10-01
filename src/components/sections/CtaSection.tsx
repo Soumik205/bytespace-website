@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Shape, type ShapeProps } from "@/components/ui/Shape";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const shapes: ShapeProps[] = [
   {
@@ -55,12 +56,12 @@ export function CtaSection() {
         </div>
 
         <Container className="relative py-20 text-center lg:pt-[85px] lg:pb-[84px]">
-          <h2
+          <SectionHeading
             id="cta-title"
-            className="mx-auto max-w-[580px] font-display text-[32px]/[1.2] font-semibold tracking-[-0.01em] text-surface lg:text-h2"
+            className="mx-auto max-w-[580px] text-surface"
           >
             Unlock Your Potential as a Creator with ByteSpace
-          </h2>
+          </SectionHeading>
           <p className="mx-auto mt-6 max-w-[964px] text-lg text-surface lg:mt-10">
             Experience the collaboration of numerous creators and an expanding
             selection of courses. Register now and become a part of a community

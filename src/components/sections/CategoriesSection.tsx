@@ -1,4 +1,5 @@
 import { Container } from "@/components/ui/Container";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import { categories } from "@/content/landing";
 
 export function CategoriesSection() {
@@ -10,12 +11,13 @@ export function CategoriesSection() {
     >
       <Container>
         <div className="text-center">
-          <h2
+          <SectionHeading
+            size="h3"
             id="categories-title"
-            className="font-display text-[28px]/[1.2] font-semibold tracking-[-0.01em] text-ink-strong lg:text-h3"
+            className="text-ink-strong"
           >
             Explore Diverse Learning Paths at Bytespace
-          </h2>
+          </SectionHeading>
           <p className="mx-auto mt-4 max-w-[915px] text-lg text-muted">
             At Bytespace, we believe in empowering individuals through
             knowledge. Our diverse range of courses spans various fields,

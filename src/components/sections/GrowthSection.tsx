@@ -5,6 +5,7 @@ import { ProgressCard } from "@/components/cards/ProgressCard";
 import { Artboard } from "@/components/ui/Artboard";
 import { Container } from "@/components/ui/Container";
 import { Shape } from "@/components/ui/Shape";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import { courses, stats } from "@/content/landing";
 
 export function GrowthSection() {
@@ -12,12 +13,9 @@ export function GrowthSection() {
     <section aria-labelledby="growth-title" className="pt-20 lg:pt-[120px]">
       <Container className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between">
         <div className="lg:pt-[74px] lg:pl-px">
-          <h2
-            id="growth-title"
-            className="max-w-[560px] font-display text-[32px]/[1.2] font-semibold tracking-[-0.01em] text-ink lg:text-h2"
-          >
+          <SectionHeading id="growth-title" className="max-w-[560px] text-ink">
             Your Path to Professional Growth Starts Here!
-          </h2>
+          </SectionHeading>
           <p className="mt-6 max-w-[480px] text-lg text-ink-soft lg:mt-10">
             Explore our curated selection of courses tailored to enhance your
             capabilities and accelerate your career journey. Whether you are
