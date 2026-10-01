@@ -64,7 +64,10 @@ export function CourseCard({
         )}
       >
         <div className="min-w-0">
-          <h3 className="truncate font-display text-title text-black">
+          <h3
+            title={course.title}
+            className="truncate font-display text-title text-black"
+          >
             {course.title}
           </h3>
           <p
