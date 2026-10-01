@@ -24,11 +24,11 @@
 
   /* Poppins headings */
   --text-display: 72px;
-  --text-display--line-height: 1.2;
+  --text-display--line-height: 86px;
   --text-display--letter-spacing: -0.01em;
   --text-display--font-weight: 600;
   --text-h2: 44px;
-  --text-h2--line-height: 1.2;
+  --text-h2--line-height: 53px;
   --text-h2--letter-spacing: -0.01em;
   --text-h2--font-weight: 600;
   --text-h3: 36px;
