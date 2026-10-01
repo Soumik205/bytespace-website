@@ -18,11 +18,13 @@ export function AuthIllustration({
       <CourseCard
         course={courses[1]}
         featured
+        eager
         className="absolute top-[89px] left-[27px] w-[373px]"
       />
       <CourseCard
         course={courses[2]}
         featured
+        eager
         className="absolute top-0 left-[138px] w-[373px]"
       />
       <HappyStudentsCard

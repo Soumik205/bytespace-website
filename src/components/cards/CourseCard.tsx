@@ -12,12 +12,14 @@ import { cn } from "@/lib/utils";
 type CourseCardProps = {
   course: Course;
   featured?: boolean;
+  eager?: boolean;
   className?: string;
 };
 
 export function CourseCard({
   course,
   featured = false,
+  eager = false,
   className,
 }: CourseCardProps) {
   const facts = [course.lessons, course.duration, course.comments];
@@ -34,6 +36,7 @@ export function CourseCard({
           src={course.image}
           alt=""
           fill
+          loading={eager ? "eager" : "lazy"}
           sizes="(min-width: 1024px) 341px, (min-width: 768px) 50vw, 100vw"
           className="object-cover"
         />
