@@ -28,7 +28,7 @@ export function CoursesSection() {
 
         <TopicFilter className="mt-10 lg:mt-[42px]" />
 
-        <ul className="mt-12 grid gap-10 md:grid-cols-2 lg:mt-[77px] lg:grid-cols-3">
+        <ul className="mt-12 grid grid-cols-1 gap-10 md:grid-cols-2 lg:mt-[77px] xl:grid-cols-3">
           {courses.map((course) => (
             <li key={course.title}>
               <CourseCard course={course} />

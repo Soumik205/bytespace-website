@@ -39,7 +39,7 @@ export function CourseCard({
         />
         <ul
           className={cn(
-            "absolute left-[13px] flex gap-3",
+            "absolute left-3 flex gap-1.5 xl:left-[13px] xl:gap-3",
             featured ? "bottom-[13px]" : "bottom-[19px]",
           )}
         >

@@ -13,12 +13,12 @@ export function TopicFilter({ className }: { className?: string }) {
       role="group"
       aria-label="Course topics"
       className={cn(
-        "flex flex-wrap justify-center gap-x-4 gap-y-3 lg:flex-col lg:items-center lg:gap-y-[21px]",
+        "flex flex-wrap justify-center gap-x-4 gap-y-3 xl:flex-col xl:items-center xl:gap-y-[21px]",
         className,
       )}
     >
       {topicRows.map((row, rowIndex) => (
-        <div key={rowIndex} className="contents lg:flex lg:gap-4">
+        <div key={rowIndex} className="contents xl:flex xl:gap-4">
           {row.map((topic) => (
             <button
               key={topic}
