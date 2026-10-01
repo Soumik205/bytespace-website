@@ -2,25 +2,19 @@
 
 import { useMemo, useRef, useState } from "react";
 
-import { CourseCard } from "@/components/cards/CourseCard";
 import { CatalogToolbar } from "@/components/catalog/CatalogToolbar";
+import { CourseGrid } from "@/components/catalog/CourseGrid";
 import { Pagination } from "@/components/catalog/Pagination";
+import { useCourseFilters } from "@/components/catalog/useCourseFilters";
 import { ChevronDownIcon } from "@/components/icons/Icons";
 import { Container } from "@/components/ui/Container";
 import { SearchField } from "@/components/ui/SearchField";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { catalogTopics, courses } from "@/content/landing";
+import { courses } from "@/content/landing";
 
 // The design fills its grid with the six courses three times over.
 const catalog = [...courses, ...courses, ...courses];
 const pageCount = 5;
-
-export type CatalogFilters = {
-  level: string;
-  sort: string;
-  topic: string;
-  showTopics: boolean;
-};
 
 export function CourseCatalog({
   initialQuery = "",
@@ -29,30 +23,18 @@ export function CourseCatalog({
 }) {
   const [query, setQuery] = useState(initialQuery);
   const [scope, setScope] = useState<"courses" | "creators">("courses");
-  const [filters, setFilters] = useState<CatalogFilters>({
-    level: "",
-    sort: "",
-    topic: catalogTopics[0],
-    showTopics: true,
-  });
   const [page, setPage] = useState(1);
   const resultsRef = useRef<HTMLElement>(null);
 
-  const results = useMemo(() => {
+  const searched = useMemo(() => {
     const needle = query.trim().toLowerCase();
-    const matches = catalog.filter((course) => {
-      const field = scope === "courses" ? course.title : course.creator;
-      return (
-        field.toLowerCase().includes(needle) &&
-        (!filters.level || course.level === filters.level)
-      );
-    });
-    if (filters.sort === "az")
-      return [...matches].sort((a, b) => a.title.localeCompare(b.title));
-    if (filters.sort === "za")
-      return [...matches].sort((a, b) => b.title.localeCompare(a.title));
-    return matches;
-  }, [query, scope, filters.level, filters.sort]);
+    return catalog.filter((course) =>
+      (scope === "courses" ? course.title : course.creator)
+        .toLowerCase()
+        .includes(needle),
+    );
+  }, [query, scope]);
+  const { filters, update, results } = useCourseFilters(searched);
 
   const isFiltered = query.trim() !== "" || filters.level !== "";
 
@@ -121,27 +103,15 @@ export function CourseCatalog({
           <CatalogToolbar
             filters={filters}
             onChange={(next) => {
-              setFilters((current) => ({ ...current, ...next }));
+              update(next);
               setPage(1);
             }}
           />
 
-          {results.length > 0 ? (
-            <ul className="mt-12 grid grid-cols-1 gap-10 md:grid-cols-2 xl:mt-[77px] xl:ml-px xl:grid-cols-3">
-              {results.map((course, index) => (
-                <li key={`${course.title}-${index}`}>
-                  <CourseCard course={course} eager={index < 3} />
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p
-              role="status"
-              className="mt-12 text-center text-lg text-ink-soft"
-            >
-              No courses match your search.
-            </p>
-          )}
+          <CourseGrid
+            courses={results}
+            className="mt-12 xl:mt-[77px] xl:ml-px"
+          />
 
           {!isFiltered && (
             // The design places the pagination 25px right of center.

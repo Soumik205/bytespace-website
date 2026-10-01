@@ -1,4 +1,4 @@
-import type { CatalogFilters } from "@/components/catalog/CourseCatalog";
+import type { CatalogFilters } from "@/components/catalog/useCourseFilters";
 import { SelectPill } from "@/components/catalog/SelectPill";
 import {
   CategoryIcon,
