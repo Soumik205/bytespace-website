@@ -1,12 +1,10 @@
-import type { ReactNode } from "react";
+import type { ComponentProps } from "react";
 
 import { cn } from "@/lib/utils";
 
-type ArtboardProps = {
+type ArtboardProps = ComponentProps<"div"> & {
   width: number;
   height: number;
-  className?: string;
-  children: ReactNode;
 };
 
 // Keeps an illustration of overlapping layers at its design size so each layer can use
@@ -17,11 +15,13 @@ export function Artboard({
   height,
   className,
   children,
+  ...props
 }: ArtboardProps) {
   return (
     <div
       className={cn("relative [--scale:1]", className)}
       style={{ height: `calc(${height}px * var(--scale))` }}
+      {...props}
     >
       <div
         className="absolute top-0 left-1/2 origin-top -translate-x-1/2 scale-(--scale)"
