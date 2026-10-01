@@ -37,11 +37,19 @@ export function CourseCard({
           sizes="(min-width: 1024px) 341px, (min-width: 768px) 50vw, 100vw"
           className="object-cover"
         />
-        <ul className="absolute bottom-[19px] left-[13px] flex gap-3">
+        <ul
+          className={cn(
+            "absolute left-[13px] flex gap-3",
+            featured ? "bottom-[13px]" : "bottom-[19px]",
+          )}
+        >
           {facts.map((fact) => (
             <li
               key={fact}
-              className="h-[26px] rounded-full bg-surface-soft/60 px-[13px] text-xs leading-[26px] whitespace-nowrap text-body backdrop-blur-[4px]"
+              className={cn(
+                "rounded-full bg-surface-soft/60 px-[13px] text-xs whitespace-nowrap text-body backdrop-blur-[4px]",
+                featured ? "h-8 leading-8" : "h-[26px] leading-[26px]",
+              )}
             >
               {fact}
             </li>
@@ -49,12 +57,17 @@ export function CourseCard({
         </ul>
       </div>
 
-      <div className="mt-[21px] flex items-start justify-between gap-3">
+      <div
+        className={cn(
+          "flex items-start justify-between gap-3",
+          featured ? "mt-[23px]" : "mt-[21px]",
+        )}
+      >
         <div className="min-w-0">
           <h3 className="truncate font-display text-title text-black">
             {course.title}
           </h3>
-          <p className="text-xs text-body">
+          <p className={cn("text-xs text-body", featured && "mt-0.5")}>
             by <span className="text-primary">{course.creator}</span>
           </p>
         </div>

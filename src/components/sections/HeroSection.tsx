@@ -84,7 +84,7 @@ export function HeroSection() {
             className="absolute top-[-3px] left-[110px] max-w-none"
           />
           <div aria-hidden="true">
-            <ProgressCard className="absolute top-[139px] left-[542px]" />
+            <ProgressCard tight className="absolute top-[139px] left-[542px]" />
             <HappyStudentsCard className="absolute top-[325px] left-[28px]" />
             <div className="absolute top-[127px] left-[104px] w-[208px] rounded-2xl bg-white p-4 text-ink">
               <p className="text-base leading-[1.2]">UI/UX Design</p>
