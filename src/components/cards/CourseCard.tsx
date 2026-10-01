@@ -47,7 +47,7 @@ export function CourseCard({
             <li
               key={fact}
               className={cn(
-                "rounded-full bg-surface-soft/60 px-[13px] text-xs whitespace-nowrap text-body backdrop-blur-[4px]",
+                "rounded-full bg-surface-soft/60 px-3 text-xs font-medium whitespace-nowrap text-body backdrop-blur-[4px]",
                 featured ? "h-8 leading-8" : "h-[26px] leading-[26px]",
               )}
             >
@@ -67,15 +67,25 @@ export function CourseCard({
           <h3 className="truncate font-display text-title text-black">
             {course.title}
           </h3>
-          <p className={cn("text-xs text-body", featured && "mt-0.5")}>
+          <p
+            className={cn(
+              "text-xs leading-[19px] text-body",
+              featured && "mt-[3px]",
+            )}
+          >
             by <span className="text-primary">{course.creator}</span>
           </p>
         </div>
-        <p className="flex shrink-0 items-center text-lg text-body">
+        <p
+          className={cn(
+            "flex shrink-0 items-center text-lg text-body",
+            featured && "-mt-[2.5px]",
+          )}
+        >
           <span className="sr-only">Rated </span>
           {course.rating}
           {featured ? (
-            <StarIcon className="ml-1 size-6 text-lime" />
+            <StarIcon className="ml-px size-6 text-lime" />
           ) : (
             <StarRoundedIcon className="ml-px size-6 text-line" />
           )}
@@ -83,7 +93,7 @@ export function CourseCard({
       </div>
 
       <div className="mt-4 flex items-center gap-3">
-        <p className="flex h-8 items-center gap-1 rounded-full bg-surface px-3 text-xs text-ink-soft">
+        <p className="flex h-8 items-center gap-1 rounded-full bg-surface px-3 text-xs font-medium text-ink-soft">
           <SignalIcon className="size-5" />
           {course.level}
         </p>
@@ -92,11 +102,11 @@ export function CourseCard({
           count={course.learners}
           size={32}
           className="-space-x-2"
-          countClassName={featured ? "bg-black text-white" : undefined}
+          countClassName={cn("font-medium", featured && "bg-black text-white")}
         />
       </div>
 
-      <p className="mt-4 flex items-baseline">
+      <p className="mt-4 flex h-6 items-baseline">
         <span className="font-display text-title text-primary">
           {course.price}
         </span>

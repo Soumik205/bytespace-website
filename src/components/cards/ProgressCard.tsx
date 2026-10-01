@@ -11,7 +11,12 @@ export function ProgressCard({ className, tight = false }: ProgressCardProps) {
     <div
       className={cn("w-[232px] rounded-2xl bg-white p-4 text-ink", className)}
     >
-      <p className={cn("text-sm", tight && "leading-[1.2]")}>
+      <p
+        className={cn(
+          "text-sm font-medium",
+          tight ? "leading-[1.2]" : "leading-6",
+        )}
+      >
         Learning Progress
       </p>
       <p className="mt-2 font-display text-stat">55%</p>
