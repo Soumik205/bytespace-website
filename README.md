@@ -90,11 +90,13 @@ public/
 
 ## Lighthouse
 
-Mobile, production URL:
+Mobile, production URL, median of three runs on October 1, 2026:
 
 | Performance | Accessibility | Best Practices | SEO |
 | --- | --- | --- | --- |
-| _ | _ | _ | _ |
+| 91 | 97 | 100 | 100 |
+
+Cumulative Layout Shift is 0 and Total Blocking Time is 0 ms. The only accessibility finding is color contrast: the design's muted gray (`#82868E`) on white measures 3.65:1, below the 4.5:1 that WCAG AA asks for body text. It is used for the section intros and some card details. The design colors were kept as they are.
 
 ## What I would do with more time
 
