@@ -27,8 +27,8 @@ export function Header() {
                   href={link.href}
                   className={cn(
                     linkClasses,
-                    // The design lifts "Home" 2.5px above the other links.
-                    index === 0 && "relative -top-[2.5px]",
+                    // The design marks "Home" with a medium weight and lifts it 2.5px.
+                    index === 0 && "relative -top-[2.5px] font-medium",
                   )}
                 >
                   {link.label}

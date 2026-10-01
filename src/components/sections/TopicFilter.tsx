@@ -26,7 +26,7 @@ export function TopicFilter({ className }: { className?: string }) {
               aria-pressed={active === topic}
               onClick={() => setActive(topic)}
               className={cn(
-                "h-[43px] rounded-full px-[17.5px] text-base whitespace-nowrap transition-colors",
+                "h-[43px] rounded-full px-[16.5px] text-base font-medium whitespace-nowrap transition-colors",
                 active === topic
                   ? "bg-lime text-ink"
                   : "bg-surface text-ink-soft hover:bg-line/60",
@@ -38,7 +38,7 @@ export function TopicFilter({ className }: { className?: string }) {
           {rowIndex === topicRows.length - 1 && (
             <a
               href="#categories"
-              className="flex h-[43px] items-center text-base whitespace-nowrap text-primary hover:underline"
+              className="flex h-[43px] items-center text-base font-medium whitespace-nowrap text-primary hover:underline"
             >
               + More
             </a>

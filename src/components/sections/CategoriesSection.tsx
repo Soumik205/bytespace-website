@@ -34,7 +34,7 @@ export function CategoriesSection() {
                 <span className="grid size-15 place-items-center rounded-full bg-lime">
                   <Icon className="size-9" />
                 </span>
-                <span className="mt-2">{label}</span>
+                <span className="mt-2 font-medium">{label}</span>
               </a>
             </li>
           ))}
