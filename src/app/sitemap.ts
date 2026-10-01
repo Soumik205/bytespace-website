@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 
 import { courseDetails } from "@/content/courses";
+import { creators } from "@/content/creators";
 import { siteUrl } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -34,5 +35,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: tab ? 0.6 : 0.8,
       })),
     ),
+    ...creators.map((creator) => ({
+      url: `${siteUrl}/creators/${creator.slug}`,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
   ];
 }

@@ -14,7 +14,7 @@ export type NavLink = { label: string; href: string };
 export const mainNav: NavLink[] = [
   { label: "Home", href: "/#home" },
   { label: "Courses", href: "/courses" },
-  { label: "Creators", href: "/#creators" },
+  { label: "Creators", href: "/creators/purepearl-studio" },
 ];
 
 export const authNav: NavLink[] = [
