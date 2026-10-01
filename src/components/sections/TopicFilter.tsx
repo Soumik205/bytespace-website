@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 
+import { chipClasses } from "@/components/ui/Chip";
 import { topicRows } from "@/content/landing";
 import { cn } from "@/lib/utils";
 
@@ -25,12 +26,7 @@ export function TopicFilter({ className }: { className?: string }) {
               type="button"
               aria-pressed={active === topic}
               onClick={() => setActive(topic)}
-              className={cn(
-                "h-[43px] rounded-full px-[16.5px] text-base font-medium whitespace-nowrap transition-colors",
-                active === topic
-                  ? "bg-lime text-ink"
-                  : "bg-surface text-ink-soft hover:bg-line/60",
-              )}
+              className={cn(chipClasses(active === topic), "px-[16.5px]")}
             >
               {topic}
             </button>
