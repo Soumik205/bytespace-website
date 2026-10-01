@@ -5,6 +5,7 @@ import { MobileMenu } from "@/components/layout/MobileMenu";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/ui/Logo";
 import { authNav, mainNav } from "@/content/landing";
+import { cn } from "@/lib/utils";
 
 const linkClasses = "text-base text-surface transition-colors hover:text-lime";
 
@@ -20,9 +21,16 @@ export function Header() {
           className="absolute left-1/2 hidden -translate-x-1/2 lg:block"
         >
           <ul className="flex gap-6">
-            {mainNav.map((link) => (
+            {mainNav.map((link, index) => (
               <li key={link.label}>
-                <Link href={link.href} className={linkClasses}>
+                <Link
+                  href={link.href}
+                  className={cn(
+                    linkClasses,
+                    // The design lifts "Home" 2.5px above the other links.
+                    index === 0 && "relative -top-[2.5px]",
+                  )}
+                >
                   {link.label}
                 </Link>
               </li>
