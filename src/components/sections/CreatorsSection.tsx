@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { HappyStudentsCard } from "@/components/cards/HappyStudentsCard";
+import { RevenueCard } from "@/components/cards/RevenueCard";
 import { CheckCircleIcon } from "@/components/icons/Icons";
 import { Artboard } from "@/components/ui/Artboard";
 import { Container } from "@/components/ui/Container";
@@ -21,29 +22,21 @@ export function CreatorsSection() {
           aria-hidden
           className="[--scale:0.6] sm:[--scale:0.9] lg:ml-px lg:w-[541px] lg:shrink-0 lg:[--scale:1]"
         >
-          <div className="absolute top-[44px] left-0 w-[232px] rounded-2xl bg-primary p-4 text-surface">
-            <p className="text-base leading-[1.2] font-medium">Total Revenue</p>
-            <p className="text-2xs leading-[1.2]">July 1-28</p>
-            <div className="mt-2.5 flex items-center justify-between">
-              <p className="font-display text-amount">$120.29</p>
-              <p className="rounded-full bg-lime-bright px-2 text-2xs leading-6 text-ink">
-                +12$
-              </p>
-            </div>
-            <div className="mt-2.5 h-2 w-[200px] rounded-full bg-white">
-              <div className="h-full w-[112px] rounded-full bg-lime" />
-            </div>
-          </div>
-          <div className="absolute top-[194px] left-0 w-[134px] rounded-2xl bg-primary p-4 text-surface">
-            <p className="text-base leading-[1.2] font-medium">Year to Date</p>
-            <p className="text-2xs leading-[1.2]">2023</p>
-            <p className="mt-2.5 font-display text-amount whitespace-nowrap">
-              $1,200.38
-            </p>
-            <p className="mt-2.5 w-fit rounded-full bg-lime-bright px-2 text-2xs leading-6 text-ink">
-              +12$
-            </p>
-          </div>
+          <RevenueCard
+            title="Total Revenue"
+            period="July 1-28"
+            amount="$120.29"
+            change="+12$"
+            className="absolute top-[44px] left-0"
+          />
+          <RevenueCard
+            title="Year to Date"
+            period="2023"
+            amount="$1,200.38"
+            change="+12$"
+            variant="compact"
+            className="absolute top-[194px] left-0"
+          />
           <Image
             src="/images/student-tablet.webp"
             alt=""
