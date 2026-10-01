@@ -19,7 +19,7 @@ export function Footer() {
               Stay Up to date with our latest features and releases by joining
               our newsletter.
             </p>
-            <NewsletterForm className="mt-8 lg:mt-[45px]" />
+            <NewsletterForm className="mt-8 lg:mt-11" />
             <p className="mt-6 text-xs">
               By subscribing, you agree to our Privacy Policy and consent to
               receive updates from our company.
