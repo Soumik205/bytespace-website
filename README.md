@@ -1,6 +1,6 @@
 # ByteSpace
 
-Landing page for ByteSpace, an online course platform, built from the Figma design with Next.js, TypeScript and Tailwind CSS.
+Landing page, Login and Signup for ByteSpace, an online course platform, built from the Figma design with Next.js, TypeScript and Tailwind CSS.
 
 - Live site: https://bytespace-website-navy.vercel.app
 - Pull request: https://github.com/Soumik205/bytespace-website/pull/1
@@ -44,12 +44,16 @@ src/
 ├── app/
 │   ├── layout.tsx        fonts, metadata, html and body
 │   ├── page.tsx          landing page, only composes sections
+│   ├── (auth)/           shared auth layout, login/ and signup/ pages
 │   ├── globals.css       Tailwind import, tokens, grid and glow backgrounds
+│   ├── robots.ts         robots.txt
+│   ├── sitemap.ts        sitemap.xml
 │   ├── icon.svg          favicon
 │   └── fonts/            Satoshi and Clash Display (woff2)
 ├── components/
-│   ├── ui/               Button, Container, Logo, AvatarStack, Shape, Artboard
-│   ├── cards/            CourseCard, ProgressCard, HappyStudentsCard
+│   ├── ui/               Button, Container, Logo, SectionHeading, TextField, AvatarStack, Shape, Artboard
+│   ├── cards/            CourseCard, ProgressCard, HappyStudentsCard, RevenueCard
+│   ├── auth/             AuthShell, AuthCard, AuthIllustration, LoginForm, SignupForm, SocialSignIn
 │   ├── forms/            SearchForm, NewsletterForm
 │   ├── layout/           Header, MobileMenu, Footer
 │   ├── sections/         one component per landing page section
@@ -58,7 +62,8 @@ src/
 │   └── landing.ts        navigation, courses, categories, testimonials, footer links
 └── lib/
     ├── utils.ts          cn() helper
-    └── validation.ts     zod schemas
+    ├── site.ts           site name, description and production URL
+    └── validation.ts     zod schemas for the newsletter, login and signup forms
 public/
 ├── images/               photos, avatars, course covers and 3D shapes (WebP)
 ├── logos/                partner logos (SVG)
@@ -84,6 +89,7 @@ public/
 - **Copy.** Text matches the design exactly, including "the Power of Big Data", "@ 2023 ByteSpace" and the "Search" label on the newsletter button. Long course titles are truncated with an ellipsis as in the design.
 - **Links.** Home, Courses and Creators scroll to their sections. Sign In and Join Us (and Join as Creator) go to `/login` and `/signup`. Links to pages outside this task point to `#`.
 - **Forms.** The hero search jumps to the course list. The newsletter form validates the email address and shows a confirmation; nothing is sent anywhere.
+- **Login and Signup.** Both pages follow their Figma frames at 1440px. Fields are validated in the browser (required fields, email format, password of at least 8 characters) with errors under each field after it loses focus or on submit. Submitting shows a short loading state and then a confirmation; no data leaves the browser. The design has no eye icon, confirm password field or terms checkbox, so the forms have none. The Facebook and Google buttons are rendered as designed and do nothing. Below 1280px the illustration is hidden and the intro and form stack in a single column.
 - **Topic chips.** The chips work as a toggle group (one active topic at a time). The design shows a single course list, so selecting a topic does not change the cards.
 - **Small differences between repeated cards.** Figma has slightly different spacing between the two copies of the "Learning Progress" and "Happy Students" cards and between the testimonial cards. The shared components follow the larger copy; where the difference was visible a small variant prop covers it.
 - **Accessibility.** One `h1`, headings in order, landmarks for header, nav, main and footer, labels on every input, visible focus rings, `aria-pressed` on the topic chips, decorative layers hidden from screen readers, and smooth scrolling only when the visitor allows motion.
@@ -100,6 +106,6 @@ Cumulative Layout Shift is 0 and Total Blocking Time is 0 ms. The only accessibi
 
 ## What I would do with more time
 
-- Build the Login and Signup pages and the 404 page from their Figma frames.
+- Build the 404, search, course and creator pages from their Figma frames.
 - Load real courses per topic so the chips filter the list.
 - Add visual regression tests that compare each section with the design at 1440px.
