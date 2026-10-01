@@ -12,8 +12,12 @@ import { SearchField } from "@/components/ui/SearchField";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { courses } from "@/content/landing";
 
-// The design fills its grid with the six courses three times over.
-const catalog = [...courses, ...courses, ...courses];
+// The design fills its grid with the six courses three times over. Only
+// "Build Digital Asset" has a detail page, so every card in the catalogue opens it.
+const catalog = [...courses, ...courses, ...courses].map((course) => ({
+  ...course,
+  href: "/courses/build-digital-asset",
+}));
 const pageCount = 5;
 
 export function CourseCatalog({
