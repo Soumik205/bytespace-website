@@ -3,7 +3,15 @@
 Website for ByteSpace, an online course platform, built from the Figma design with Next.js, TypeScript and Tailwind CSS: landing page, course search, course page with three tabs, creator profile, Login, Signup and a 404 page.
 
 - Live site: https://bytespace-website-navy.vercel.app
-- Pull request: https://github.com/Soumik205/bytespace-website/pull/1
+- Pull requests:
+  - [#1 Landing page](https://github.com/Soumik205/bytespace-website/pull/1)
+  - [#2 Login and Signup](https://github.com/Soumik205/bytespace-website/pull/2)
+  - [#3 Fixes found in review](https://github.com/Soumik205/bytespace-website/pull/3)
+  - [#4 404 page](https://github.com/Soumik205/bytespace-website/pull/4)
+  - [#5 Course page](https://github.com/Soumik205/bytespace-website/pull/5)
+  - [#6 Course search](https://github.com/Soumik205/bytespace-website/pull/6)
+  - [#7 Creator profile](https://github.com/Soumik205/bytespace-website/pull/7)
+  - [#8 Accessibility fix for the auth illustration](https://github.com/Soumik205/bytespace-website/pull/8)
 
 ![ByteSpace landing page](public/og.png)
 
