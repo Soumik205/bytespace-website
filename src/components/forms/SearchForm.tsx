@@ -10,7 +10,7 @@ export function SearchForm({ className }: { className?: string }) {
   // There is no search page yet, so a search takes the visitor to the course list.
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    document.getElementById("courses")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("courses")?.scrollIntoView();
   };
 
   return (

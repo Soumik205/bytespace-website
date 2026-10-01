@@ -58,6 +58,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${poppins.variable} ${satoshi.variable} ${clashDisplay.variable}`}
     >
       <body>{children}</body>
