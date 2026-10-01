@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 import { BagIcon, CloseIcon, MenuIcon } from "@/components/icons/Icons";
 import { Button } from "@/components/ui/Button";
@@ -13,6 +13,16 @@ export function MobileMenu() {
 
   const open = () => dialogRef.current?.showModal();
   const close = () => dialogRef.current?.close();
+
+  // The desktop header takes over from 1024px, so an open menu would be left covering it.
+  useEffect(() => {
+    const desktop = window.matchMedia("(min-width: 64rem)");
+    const closeOnDesktop = () => {
+      if (desktop.matches) dialogRef.current?.close();
+    };
+    desktop.addEventListener("change", closeOnDesktop);
+    return () => desktop.removeEventListener("change", closeOnDesktop);
+  }, []);
 
   return (
     <div className="lg:hidden">
@@ -29,7 +39,7 @@ export function MobileMenu() {
       <dialog
         ref={dialogRef}
         aria-label="Menu"
-        className="m-0 h-dvh max-h-none w-full max-w-none bg-grid p-0 text-surface backdrop:bg-ink/40 open:flex open:flex-col"
+        className="m-0 h-dvh max-h-none w-full max-w-none bg-grid p-0 text-surface [--focus-ring:var(--color-lime)] backdrop:bg-ink/40 open:flex open:flex-col"
       >
         <div className="flex h-20 items-center justify-between px-4 sm:px-6">
           <Logo className="text-surface" />
