@@ -1,0 +1,50 @@
+"use client";
+
+import { useState } from "react";
+
+import { topicRows } from "@/content/landing";
+import { cn } from "@/lib/utils";
+
+export function TopicFilter({ className }: { className?: string }) {
+  const [active, setActive] = useState(topicRows[0][0]);
+
+  return (
+    <div
+      role="group"
+      aria-label="Course topics"
+      className={cn(
+        "flex flex-wrap justify-center gap-x-4 gap-y-3 lg:flex-col lg:items-center lg:gap-y-[21px]",
+        className,
+      )}
+    >
+      {topicRows.map((row, rowIndex) => (
+        <div key={rowIndex} className="contents lg:flex lg:gap-4">
+          {row.map((topic) => (
+            <button
+              key={topic}
+              type="button"
+              aria-pressed={active === topic}
+              onClick={() => setActive(topic)}
+              className={cn(
+                "h-[43px] rounded-full px-[17.5px] text-base whitespace-nowrap transition-colors",
+                active === topic
+                  ? "bg-lime text-ink"
+                  : "bg-surface text-ink-soft hover:bg-line/60",
+              )}
+            >
+              {topic}
+            </button>
+          ))}
+          {rowIndex === topicRows.length - 1 && (
+            <a
+              href="#categories"
+              className="flex h-[43px] items-center text-base whitespace-nowrap text-primary hover:underline"
+            >
+              + More
+            </a>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+}
