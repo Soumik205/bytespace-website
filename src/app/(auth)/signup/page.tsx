@@ -3,10 +3,11 @@ import type { Metadata } from "next";
 import { AuthCard } from "@/components/auth/AuthCard";
 import { AuthShell } from "@/components/auth/AuthShell";
 import { SignupForm } from "@/components/auth/SignupForm";
+import { siteName, socialMetadata } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Create an Account",
-  alternates: { canonical: "/signup" },
+  ...socialMetadata(`Create an Account | ${siteName}`, "/signup"),
 };
 
 export default function SignupPage() {

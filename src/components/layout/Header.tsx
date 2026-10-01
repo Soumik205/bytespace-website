@@ -11,7 +11,7 @@ const linkClasses = "text-base text-surface transition-colors hover:text-lime";
 
 export function Header() {
   return (
-    <header className="absolute inset-x-0 top-0 z-30">
+    <header className="absolute inset-x-0 top-0 z-30 [--focus-ring:var(--color-lime)]">
       <Container className="relative flex h-20 items-center justify-between lg:h-[120px]">
         {/* The logo sits 8px above the line the nav items share. */}
         <Logo className="text-surface lg:ml-0.5 lg:-translate-y-2" />

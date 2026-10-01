@@ -43,7 +43,7 @@ export function CtaSection() {
   return (
     <section
       aria-labelledby="cta-title"
-      className="relative overflow-hidden bg-grid"
+      className="relative overflow-hidden bg-grid [--focus-ring:var(--color-lime)]"
     >
       <div className="relative mx-auto max-w-[1440px]">
         <div

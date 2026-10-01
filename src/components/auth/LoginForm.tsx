@@ -11,7 +11,7 @@ import { TextField } from "@/components/ui/TextField";
 import { loginSchema, type LoginValues } from "@/lib/validation";
 
 export function LoginForm() {
-  const { submit, succeeded } = useFakeSubmit();
+  const { submit, clear, succeeded } = useFakeSubmit();
   const {
     register,
     handleSubmit,
@@ -24,7 +24,7 @@ export function LoginForm() {
   return (
     <>
       <form
-        onSubmit={handleSubmit(submit)}
+        onSubmit={handleSubmit(submit, clear)}
         noValidate
         className="mt-10 flex flex-col"
       >

@@ -3,10 +3,11 @@ import type { Metadata } from "next";
 import { AuthCard } from "@/components/auth/AuthCard";
 import { AuthShell } from "@/components/auth/AuthShell";
 import { LoginForm } from "@/components/auth/LoginForm";
+import { siteName, socialMetadata } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Sign In",
-  alternates: { canonical: "/login" },
+  ...socialMetadata(`Sign In | ${siteName}`, "/login"),
 };
 
 export default function LoginPage() {

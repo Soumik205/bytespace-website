@@ -48,7 +48,7 @@ export function HeroSection() {
     <section
       id="home"
       aria-labelledby="hero-title"
-      className="relative overflow-hidden bg-grid"
+      className="relative overflow-hidden bg-grid [--focus-ring:var(--color-lime)]"
     >
       <div className="relative mx-auto max-w-[1440px] pt-[136px] lg:pt-[169px]">
         <Container className="relative z-10 text-center">

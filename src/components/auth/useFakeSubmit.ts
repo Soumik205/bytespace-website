@@ -10,5 +10,7 @@ export function useFakeSubmit(delay = 900) {
     setSucceeded(true);
   };
 
-  return { submit, succeeded };
+  const clear = () => setSucceeded(false);
+
+  return { submit, clear, succeeded };
 }
