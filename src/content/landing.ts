@@ -12,9 +12,9 @@ import {
 export type NavLink = { label: string; href: string };
 
 export const mainNav: NavLink[] = [
-  { label: "Home", href: "#home" },
-  { label: "Courses", href: "#courses" },
-  { label: "Creators", href: "#creators" },
+  { label: "Home", href: "/#home" },
+  { label: "Courses", href: "/#courses" },
+  { label: "Creators", href: "/#creators" },
 ];
 
 export const authNav: NavLink[] = [
@@ -195,21 +195,21 @@ export const testimonials = [
 
 export const footerColumns: NavLink[][] = [
   [
-    { label: "Featured Courses", href: "#courses" },
-    { label: "Featured Categories", href: "#categories" },
-    { label: "Business", href: "#categories" },
-    { label: "IT", href: "#categories" },
-    { label: "Design", href: "#categories" },
+    { label: "Featured Courses", href: "/#courses" },
+    { label: "Featured Categories", href: "/#categories" },
+    { label: "Business", href: "/#categories" },
+    { label: "IT", href: "/#categories" },
+    { label: "Design", href: "/#categories" },
   ],
   [
-    { label: "Development", href: "#categories" },
-    { label: "Marketing", href: "#categories" },
-    { label: "Photography", href: "#categories" },
+    { label: "Development", href: "/#categories" },
+    { label: "Marketing", href: "/#categories" },
+    { label: "Photography", href: "/#categories" },
     { label: "Finance", href: "#" },
     { label: "Sport", href: "#" },
   ],
   [
-    { label: "Become a Creator", href: "#creators" },
+    { label: "Become a Creator", href: "/#creators" },
     { label: "Affiliate Program", href: "#" },
     { label: "Contact", href: "#" },
     { label: "Help", href: "#" },
