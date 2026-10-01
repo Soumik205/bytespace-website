@@ -1,3 +1,4 @@
+import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { CategoriesSection } from "@/components/sections/CategoriesSection";
 import { CoursesSection } from "@/components/sections/CoursesSection";
@@ -24,6 +25,7 @@ export default function Home() {
         <CtaSection />
         <TestimonialsSection />
       </main>
+      <Footer />
     </>
   );
 }
