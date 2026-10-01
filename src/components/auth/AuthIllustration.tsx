@@ -9,6 +9,7 @@ type AuthIllustrationProps = {
   reviewsClassName?: string;
 };
 
+// The cards are decoration here, so they never link anywhere.
 export function AuthIllustration({
   className,
   reviewsClassName,
@@ -16,13 +17,13 @@ export function AuthIllustration({
   return (
     <Artboard width={552} height={585} aria-hidden className={className}>
       <CourseCard
-        course={courses[1]}
+        course={{ ...courses[1], href: undefined }}
         featured
         eager
         className="absolute top-[89px] left-[27px] w-[373px]"
       />
       <CourseCard
-        course={courses[2]}
+        course={{ ...courses[2], href: undefined }}
         featured
         eager
         className="absolute top-0 left-[138px] w-[373px]"
