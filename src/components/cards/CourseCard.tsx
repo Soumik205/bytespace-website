@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import {
   SignalIcon,
@@ -27,7 +28,8 @@ export function CourseCard({
   return (
     <article
       className={cn(
-        "rounded-card border border-line bg-white px-[15px] pt-[15px] pb-5",
+        "relative rounded-card border border-line bg-white px-[15px] pt-[15px] pb-5",
+        course.href && "transition-colors hover:border-primary",
         className,
       )}
     >
@@ -71,7 +73,17 @@ export function CourseCard({
             title={course.title}
             className="truncate font-display text-title text-black"
           >
-            {course.title}
+            {course.href ? (
+              // The link covers the whole card so any part of it opens the course.
+              <Link
+                href={course.href}
+                className="after:absolute after:inset-0 after:rounded-card"
+              >
+                {course.title}
+              </Link>
+            ) : (
+              course.title
+            )}
           </h3>
           <p
             className={cn(
