@@ -144,6 +144,19 @@ export const courses: Course[] = [
   },
 ];
 
+// Topics shown on the course search page, in the order of the design.
+export const catalogTopics = [
+  "Featured",
+  "Music",
+  "Drawing & Painting",
+  "Marketing",
+  "Animation",
+  "Social Media",
+  "UI/UX Design",
+  "Creative Marketing",
+  "Cooking",
+];
+
 export type Category = {
   label: string;
   icon: ComponentType<SVGProps<SVGSVGElement>>;
