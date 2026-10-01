@@ -168,3 +168,51 @@ export function ConsultationIcon(props: IconProps) {
     </Icon>
   );
 }
+
+export function FilterIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M7.005 6h10l-5.01 6.3zm-2.75-.39c2.02 2.59 5.75 7.39 5.75 7.39v6c0 .55.45 1 1 1h2c.55 0 1-.45 1-1v-6s3.72-4.8 5.74-7.39a.998.998 0 0 0-.79-1.61H5.045c-.83 0-1.3.95-.79 1.61" />
+    </Icon>
+  );
+}
+
+export function CategoryIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M11.5 2 6 11h11zm0 3.84L13.43 9H9.56zM17 13c-2.49 0-4.5 2.01-4.5 4.5S14.51 22 17 22s4.5-2.01 4.5-4.5S19.49 13 17 13m0 7a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5M2.5 21.5h8v-8h-8zm2-6h4v4h-4z" />
+    </Icon>
+  );
+}
+
+export function SortIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M3 18h6v-2H3zM3 6v2h18V6zm0 7h12v-2H3z" />
+    </Icon>
+  );
+}
+
+export function ChevronDownIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="m7.41 8.295 4.59 4.58 4.59-4.58L18 9.705l-6 6-6-6z" />
+    </Icon>
+  );
+}
+
+export function ChevronLeftIcon(props: IconProps) {
+  return (
+    <Icon viewBox="0 0 32 32" {...props}>
+      <path d="M21.885 7.77 20.115 6l-10 10 10 10 1.77-1.77-8.23-8.23z" />
+    </Icon>
+  );
+}
+
+export function ChevronRightIcon(props: IconProps) {
+  return (
+    <Icon viewBox="0 0 32 32" {...props}>
+      <path d="m10.115 24.23 1.77 1.77 10-10-10-10-1.77 1.77 8.23 8.23z" />
+    </Icon>
+  );
+}

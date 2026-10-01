@@ -13,7 +13,7 @@ export type NavLink = { label: string; href: string };
 
 export const mainNav: NavLink[] = [
   { label: "Home", href: "/#home" },
-  { label: "Courses", href: "/#courses" },
+  { label: "Courses", href: "/courses" },
   { label: "Creators", href: "/#creators" },
 ];
 
@@ -144,6 +144,19 @@ export const courses: Course[] = [
   },
 ];
 
+// Topics shown on the course search page, in the order of the design.
+export const catalogTopics = [
+  "Featured",
+  "Music",
+  "Drawing & Painting",
+  "Marketing",
+  "Animation",
+  "Social Media",
+  "UI/UX Design",
+  "Creative Marketing",
+  "Cooking",
+];
+
 export type Category = {
   label: string;
   icon: ComponentType<SVGProps<SVGSVGElement>>;
@@ -197,7 +210,7 @@ export const testimonials = [
 
 export const footerColumns: NavLink[][] = [
   [
-    { label: "Featured Courses", href: "/#courses" },
+    { label: "Featured Courses", href: "/courses" },
     { label: "Featured Categories", href: "/#categories" },
     { label: "Business", href: "/#categories" },
     { label: "IT", href: "/#categories" },
