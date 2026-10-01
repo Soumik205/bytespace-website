@@ -13,7 +13,7 @@ export type NavLink = { label: string; href: string };
 
 export const mainNav: NavLink[] = [
   { label: "Home", href: "/#home" },
-  { label: "Courses", href: "/#courses" },
+  { label: "Courses", href: "/courses" },
   { label: "Creators", href: "/#creators" },
 ];
 
@@ -210,7 +210,7 @@ export const testimonials = [
 
 export const footerColumns: NavLink[][] = [
   [
-    { label: "Featured Courses", href: "/#courses" },
+    { label: "Featured Courses", href: "/courses" },
     { label: "Featured Categories", href: "/#categories" },
     { label: "Business", href: "/#categories" },
     { label: "IT", href: "/#categories" },

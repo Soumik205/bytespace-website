@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 import { chipClasses } from "@/components/ui/Chip";
@@ -32,12 +33,12 @@ export function TopicFilter({ className }: { className?: string }) {
             </button>
           ))}
           {rowIndex === topicRows.length - 1 && (
-            <a
-              href="#categories"
+            <Link
+              href="/courses"
               className="flex h-[43px] items-center text-base font-medium whitespace-nowrap text-primary hover:underline"
             >
               + More
-            </a>
+            </Link>
           )}
         </div>
       ))}
