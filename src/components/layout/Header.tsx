@@ -40,12 +40,7 @@ export function Header() {
 
         <div className="hidden items-center gap-6 lg:flex">
           {authNav.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              prefetch={false}
-              className={linkClasses}
-            >
+            <Link key={link.label} href={link.href} className={linkClasses}>
               {link.label}
             </Link>
           ))}
