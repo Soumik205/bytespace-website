@@ -65,6 +65,7 @@ export function MobileMenu() {
               <li key={link.label}>
                 <Button
                   href={link.href}
+                  prefetch={false}
                   onClick={close}
                   variant={index === authNav.length - 1 ? "primary" : "outline"}
                 >
