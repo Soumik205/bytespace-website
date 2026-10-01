@@ -45,7 +45,10 @@ export function CtaSection() {
       className="relative overflow-hidden bg-grid"
     >
       <div className="relative mx-auto max-w-[1440px]">
-        <div aria-hidden="true" className="hidden lg:block">
+        <div
+          aria-hidden="true"
+          className="absolute inset-y-0 left-1/2 hidden w-[1440px] -translate-x-1/2 lg:block"
+        >
           {shapes.map((shape) => (
             <Shape key={`${shape.src}-${shape.x}`} {...shape} />
           ))}

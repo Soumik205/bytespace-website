@@ -97,7 +97,10 @@ export function HeroSection() {
           </div>
         </Artboard>
 
-        <div aria-hidden="true" className="hidden lg:block">
+        <div
+          aria-hidden="true"
+          className="absolute inset-y-0 left-1/2 hidden w-[1440px] -translate-x-1/2 lg:block"
+        >
           {shapes.map((shape) => (
             <Shape key={`${shape.src}-${shape.x}`} {...shape} />
           ))}
