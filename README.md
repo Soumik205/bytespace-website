@@ -1,6 +1,6 @@
 # ByteSpace
 
-Landing page, Login and Signup for ByteSpace, an online course platform, built from the Figma design with Next.js, TypeScript and Tailwind CSS.
+Website for ByteSpace, an online course platform, built from the Figma design with Next.js, TypeScript and Tailwind CSS: landing page, course search, course page with three tabs, Login, Signup and a 404 page.
 
 - Live site: https://bytespace-website-navy.vercel.app
 - Pull request: https://github.com/Soumik205/bytespace-website/pull/1
@@ -45,6 +45,8 @@ src/
 │   ├── layout.tsx        fonts, metadata, html and body
 │   ├── page.tsx          landing page, only composes sections
 │   ├── (auth)/           shared auth layout, login/ and signup/ pages
+│   ├── courses/          course search page and courses/[slug] (About, lessons/, reviews/)
+│   ├── not-found.tsx     404 page
 │   ├── globals.css       Tailwind import, tokens, grid and glow backgrounds
 │   ├── robots.ts         robots.txt
 │   ├── sitemap.ts        sitemap.xml
@@ -54,6 +56,8 @@ src/
 │   ├── ui/               Button, Container, Logo, SectionHeading, TextField, AvatarStack, Shape, Artboard
 │   ├── cards/            CourseCard, ProgressCard, HappyStudentsCard, RevenueCard
 │   ├── auth/             AuthShell, AuthCard, AuthIllustration, LoginForm, SignupForm, SocialSignIn
+│   ├── catalog/          CourseCatalog, CatalogToolbar, SelectPill, Pagination
+│   ├── course/           course header, preview, sidebar, tabs and the three tab panels
 │   ├── forms/            SearchForm, NewsletterForm
 │   ├── layout/           Header, MobileMenu, Footer
 │   ├── sections/         one component per landing page section
@@ -87,10 +91,12 @@ public/
 - **Fonts.** The design uses Poppins (headings), Satoshi (body) and Clash Display (logo wordmark). Poppins loads from Google Fonts through `next/font`. Satoshi and Clash Display are free fonts from Fontshare under the ITF Free Font License and are self hosted in `src/app/fonts`.
 - **Breakpoints.** The Figma file only has a 1440px desktop frame. The page matches that frame at 1440px and keeps the content centered up to 1920px and beyond. Below that it uses Tailwind's default breakpoints: three course columns from 1280px, two from 768px, one below; the header collapses into a menu button with a full screen dialog below 1024px; the illustrations scale down instead of reflowing.
 - **Copy.** Text matches the design exactly, including "the Power of Big Data", "@ 2023 ByteSpace" and the "Search" label on the newsletter button. Long course titles are truncated with an ellipsis as in the design.
-- **Links.** Home, Courses and Creators scroll to their sections. Sign In and Join Us (and Join as Creator) go to `/login` and `/signup`. Links to pages outside this task point to `#`.
-- **Forms.** The hero search jumps to the course list. The newsletter form validates the email address and shows a confirmation; nothing is sent anywhere.
+- **Links.** Courses opens the course search page; Home and Creators go to their sections on the home page. Sign In and Join Us (and Join as Creator) go to `/login` and `/signup`. Links to pages outside this task point to `#`.
+- **Forms.** The hero search opens the course search page with the query filled in. The newsletter form validates the email address and shows a confirmation; nothing is sent anywhere.
 - **Login and Signup.** Both pages follow their Figma frames at 1440px. Fields are validated in the browser (required fields, email format, password of at least 8 characters) with errors under each field after it loses focus or on submit. Submitting shows a short loading state and then a confirmation; no data leaves the browser. The design has no eye icon, confirm password field or terms checkbox, so the forms have none. The Facebook and Google buttons are rendered as designed and do nothing. Below 1280px the illustration is hidden and the intro and form stack in a single column.
 - **Topic chips.** The chips work as a toggle group (one active topic at a time). The design shows a single course list, so selecting a topic does not change the cards.
+- **Course pages.** Only "Build Digital Asset" has detail content in the design, so it is the only course card that links to a page; the other cards stay as they are rather than showing copy written for a different course. The three course frames are one page with About, Lesson and Reviews tabs, each tab its own route. Where the frames disagree (the middle tab label, the tab row position), the page follows the majority so the tabs stay in place when switching.
+- **Course search.** Search filters the cards by title (or by creator when the dropdown is set to Creators), Level filters by level and Most relevant sorts by title. Filter shows or hides the topic chips, and Category stays in sync with them. The design fills its grid by repeating the six courses three times and shows five pages; the page does the same, and the pagination switches the current page without new courses behind it.
 - **Small differences between repeated cards.** Figma has slightly different spacing between the two copies of the "Learning Progress" and "Happy Students" cards and between the testimonial cards. The shared components follow the larger copy; where the difference was visible a small variant prop covers it.
 - **Accessibility.** One `h1`, headings in order, landmarks for header, nav, main and footer, labels on every input, visible focus rings, `aria-pressed` on the topic chips, decorative layers hidden from screen readers, and smooth scrolling only when the visitor allows motion.
 
@@ -106,6 +112,7 @@ Cumulative Layout Shift is 0 and Total Blocking Time is 0 ms. The only accessibi
 
 ## What I would do with more time
 
-- Build the 404, search, course and creator pages from their Figma frames.
+- Build the creator profile page from its Figma frame.
+- Give every course its own detail content and a real catalogue behind the search page.
 - Load real courses per topic so the chips filter the list.
 - Add visual regression tests that compare each section with the design at 1440px.
