@@ -22,6 +22,9 @@
   --color-surface-soft: #f6f6f6;
   --color-canvas: #fafafa;
   --color-danger: #d92d20;
+  --color-ink-muted: #424348;
+  --color-subtle: #888888;
+  --color-divider: #d1d1d1;
 
   /* Poppins headings */
   --text-display: 72px;

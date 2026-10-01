@@ -69,7 +69,7 @@ export function CtaSection() {
             Course Editor, and showcase your expertise by publishing your finest
             course on the ByteSpace Course Library.
           </p>
-          <Button href="/signup" prefetch={false} className="mt-8 lg:mt-10">
+          <Button href="/signup" className="mt-8 lg:mt-10">
             Join as Creator
           </Button>
         </Container>

@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
 import localFont from "next/font/local";
+import { siteDescription, siteName, siteTitle, siteUrl } from "@/lib/site";
+
 import "./globals.css";
 
 const poppins = Poppins({
@@ -24,29 +26,28 @@ const clashDisplay = localFont({
   weight: "700",
 });
 
-const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
-  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-  : "http://localhost:3000";
-
-const title = "ByteSpace";
-const description =
-  "Unlock your creativity, gain valuable knowledge, and grow your business with our wide range of courses.";
-
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title,
-  description,
+  title: {
+    default: `${siteName} | ${siteTitle}`,
+    template: `%s | ${siteName}`,
+  },
+  description: siteDescription,
+  alternates: { canonical: "/" },
+  robots: { index: true, follow: true },
   openGraph: {
-    title: "Get Access to Hundreds Courses Available",
-    description,
-    siteName: title,
+    title: siteTitle,
+    description: siteDescription,
+    url: "/",
+    siteName,
+    locale: "en_US",
     type: "website",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "ByteSpace" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: siteName }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Get Access to Hundreds Courses Available",
-    description,
+    title: siteTitle,
+    description: siteDescription,
     images: ["/og.png"],
   },
 };

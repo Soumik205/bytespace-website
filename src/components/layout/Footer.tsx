@@ -57,7 +57,7 @@ export function Footer() {
               <li key={link.label}>
                 <Link
                   href={link.href}
-                  className={cn("block py-3.5 sm:py-0", linkClasses)}
+                  className={cn("block py-3.5 lg:py-0", linkClasses)}
                 >
                   {link.label}
                 </Link>

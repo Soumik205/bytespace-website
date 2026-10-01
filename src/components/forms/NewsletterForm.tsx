@@ -49,10 +49,12 @@ export function NewsletterForm({ className }: { className?: string }) {
         </div>
         <Button type="submit">Search</Button>
       </div>
-      <p role="status" className="mt-2 px-6 text-xs text-primary empty:hidden">
-        {isSubmitSuccessful && !errors.email
-          ? "Thanks for subscribing. We will keep you posted."
-          : null}
+      <p role="status" className="px-6 text-xs text-primary">
+        {isSubmitSuccessful && !errors.email && (
+          <span className="mt-2 block">
+            Thanks for subscribing. We will keep you posted.
+          </span>
+        )}
       </p>
     </form>
   );
