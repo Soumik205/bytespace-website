@@ -4,6 +4,7 @@ import { NewsletterForm } from "@/components/forms/NewsletterForm";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/ui/Logo";
 import { footerColumns, legalLinks } from "@/content/landing";
+import { cn } from "@/lib/utils";
 
 const linkClasses = "text-ink transition-colors hover:text-primary";
 
@@ -27,7 +28,7 @@ export function Footer() {
 
           <nav
             aria-label="Footer"
-            className="grid grid-cols-2 gap-x-10 gap-y-8 sm:grid-cols-3 lg:mt-12 lg:w-[580px]"
+            className="grid grid-cols-2 gap-x-10 gap-y-4 sm:grid-cols-3 lg:mt-12 lg:w-[580px]"
           >
             {footerColumns.map((column, index) => (
               <ul
@@ -36,7 +37,10 @@ export function Footer() {
               >
                 {column.map((link) => (
                   <li key={link.label}>
-                    <Link href={link.href} className={linkClasses}>
+                    <Link
+                      href={link.href}
+                      className={cn("block py-[11px] lg:py-0", linkClasses)}
+                    >
                       {link.label}
                     </Link>
                   </li>
@@ -48,10 +52,13 @@ export function Footer() {
 
         <div className="mt-16 flex flex-col gap-4 border-t border-line pt-[22px] text-xs sm:flex-row sm:items-center sm:justify-between lg:mt-[130px]">
           <p>@ 2023 ByteSpace. All rights reserved.</p>
-          <ul className="flex flex-wrap gap-x-6 gap-y-2">
+          <ul className="flex flex-wrap gap-x-6">
             {legalLinks.map((link) => (
               <li key={link.label}>
-                <Link href={link.href} className={linkClasses}>
+                <Link
+                  href={link.href}
+                  className={cn("block py-3.5 sm:py-0", linkClasses)}
+                >
                   {link.label}
                 </Link>
               </li>
